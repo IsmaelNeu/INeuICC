@@ -1,0 +1,22 @@
+Package: INeuICC
+Title: Coeficiente de Correla\enc{çã}{cao} Intra-Classe
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Ismael",
+           family = "Neu",
+           role = c("aut", "cre"),
+           email = "ismaelmmneu@hotmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0002-9186-2532"))
+Description: Reúne os pacotes para o cálculo do coeficiente de correla\enc{çã}{cao} intra-classe,
+    usando a metodologia apresentada por Cruz e Regazzi (1997).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports: 
+    magrittr
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

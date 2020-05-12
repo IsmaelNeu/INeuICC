@@ -1,0 +1,38 @@
+---
+title: "Coeficiente de Correlação Intra-Classe"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Coeficiente de Correlação Intra-Classe}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+O pacote `INeuICC` calcula o coeficiente de correlação intra-classe. A metodologia utilizada foi baseada no livro <strong>Modelos Biométricos Aplicados ao Melhoramento Genético</strong>.
+
+A versão de desenvolvimento encontra-se disponível no [GitHub](https://github.com/IsmaelNeu/INeuICC).
+
+
+```{r package-download-github, eval=FALSE}
+# install.packages("devtools")
+# devtools::install_github("IsmaelNeu/INeuICC", build_vignettes = TRUE)
+```
+
+Para uso:
+
+```{r setup-library-package}
+library(INeuICC)
+```
+
+
+# Coeficiente de Repetibilidade
+
+
+O <strong>coeficiente de repetibilidade</strong> quantifica a confiabilidade das medições e oferece indicativos sobre os componentes que contribuem para a variabilidade nos dados. A repetibilidade descreve o particionamento relativo da variação em fontes de variação dentro e entre grupos e na literatura é geralmente mencionada como <strong>coeficiente de correlação intra-classe (ICC)</strong>.
+
