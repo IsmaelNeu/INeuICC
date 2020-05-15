@@ -12,6 +12,8 @@
 #' @title Coeficiente de Correla\enc{çã}{ca}o Intra-Classe
 #'
 #' @name INeuICC
+#' 
+#' @author Ismael Neu (ismaelmmneu@@hotmail.com)
 #'
 #' @description O pacote `INeuICC` re\enc{ú}{u}ne fun\enc{çõ}{co}es para a estimativa do
 #'     \emph{Coeficiente de Correla\enc{çã}{ca}o Intra-Classe}, baseado no Cap\enc{í}{i}tulo 8
