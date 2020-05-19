@@ -36,3 +36,10 @@ library(INeuICC)
 
 O <strong>coeficiente de repetibilidade</strong> quantifica a confiabilidade das medições e oferece indicativos sobre os componentes que contribuem para a variabilidade nos dados. A repetibilidade descreve o particionamento relativo da variação em fontes de variação dentro e entre grupos e na literatura é geralmente mencionada como <strong>coeficiente de correlação intra-classe (ICC)</strong>.
 
+O coeficiente de repetibilidade pode também ser entendido como sendo a correlação.
+
+# Método de Componentes Principais
+
+## Matriz de Correlações
+
+
