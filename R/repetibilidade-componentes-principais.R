@@ -9,7 +9,7 @@
 #####  E-mail: ismaelmmneu@hotmail.com                                   ######
 ###############################################################################
 #'
-#' @title Analise de Repetibilidade - Componentes Principais
+#' @title Analise de Repetibilidade - Componentes Principais - Correlacao
 #'
 #' @name rpt_cp_correl
 #'
@@ -20,7 +20,7 @@
 #' @param dados Data frame. Matriz de dados.
 #' @param A String. Nome da variavel correspondendo a coluna da categoria Ambiente.
 #' @param G String. Nome da variavel correspondendo a coluna da categoria Genotipo.
-#' @param Y String. Nome da variavel correspondendo a coluna da categoria a 
+#' @param Y String. Nome da variavel correspondendo a coluna da categoria a
 #'    Variavel Resposta.
 #' @param R2 Numeric. Coeficiente de determinacao.
 #'
@@ -38,7 +38,7 @@ rpt_cp_correl <- function(dados, A, G, Y, R2 = .95){
 
   x <- dados %>% dplyr::select(A, G, Y)
   colnames(x) <- c('A', 'G', 'Y')
-  
+
   matdados <- x %>% reshape2::dcast(G ~ A) %>% dplyr::select(-G)
   R <- stats::cor(matdados, use="complete.obs", method="pearson")
 
@@ -51,7 +51,7 @@ rpt_cp_correl <- function(dados, A, G, Y, R2 = .95){
   # sinal entre valores autovetor
   tftb1 <- tbeigvect < 0
   for (j in 1:dimtb){
-    
+
     linha <- 1
     for (i in 1:dimtb){
       if(length(unique(tftb1[, i])) == 1){
@@ -71,7 +71,7 @@ rpt_cp_correl <- function(dados, A, G, Y, R2 = .95){
   releig <- abs(mineigvect/maxeigvect)
   if(linha <= dimtb && igual == 'igual' && releig >= .95){
     reptb <-  as.numeric((eigval[linha]-1)/(dimtb-1))
-    
+
     n0 <- as.numeric((R2*(1-reptb))/((1-R2)*reptb))
   }else{
     reptb <- NA
@@ -79,7 +79,7 @@ rpt_cp_correl <- function(dados, A, G, Y, R2 = .95){
   }
   # salva lista de resultados
   saida <- list(
-    'eigen' <- eigen(R),
+    Eigen <- list(eigen(R)),
     r = reptb,
     R2 = R2,
     n0 = n0

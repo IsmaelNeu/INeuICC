@@ -1,6 +1,6 @@
 Package: INeuICC
 Title: Coeficiente de Correla\enc{çã}{cao} Intra-Classe
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Ismael",
            family = "Neu",
