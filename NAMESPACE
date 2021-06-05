@@ -3,4 +3,6 @@
 export("%>%")
 export(rpt_aov_fat1)
 export(rpt_cp_correl)
+export(rpt_pca)
+export(rpt_sctructural)
 importFrom(magrittr,"%>%")

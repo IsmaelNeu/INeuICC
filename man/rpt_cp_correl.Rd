@@ -2,7 +2,7 @@
 % Please edit documentation in R/repetibilidade-componentes-principais.R
 \name{rpt_cp_correl}
 \alias{rpt_cp_correl}
-\title{Analise de Repetibilidade - Componentes Principais}
+\title{Analise de Repetibilidade - Componentes Principais - Correlacao}
 \usage{
 rpt_cp_correl(dados, A, G, Y, R2 = 0.95)
 }

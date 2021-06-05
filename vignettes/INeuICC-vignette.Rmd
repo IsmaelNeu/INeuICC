@@ -38,8 +38,309 @@ O <strong>coeficiente de repetibilidade</strong> quantifica a confiabilidade das
 
 O coeficiente de repetibilidade pode também ser entendido como sendo a correlação.
 
-# Método de Componentes Principais
-
-## Matriz de Correlações
+## Método de Componentes Principais
 
 
+
+Abeywardena (1972) relata que o coeficiente de repetibilidade pode ser mais eficientemente estimado por meio da técnica dos componentes principais, sendo o uso desta metodologia é mais enfatizado naquelas situações em que os genótipos avaliados apresentam comportamento cíclico em relação ao caractere estuddo.
+
+Em muitas espécies, a produção das variedades ocorrem de modo oscilante, havendo, por exemplo, grande florada e produção em um ano e queda no ano subsequente. Como este efeito pode variar de maneira e intensidade diferentes entre os genótipos, a análise de variância, utilizada para estimar o coeficiente de repetibilidade usual, pode não eliminar este comportamento adicional do erro experimental, e, consequentemente, o estimador da repetibilidade estaria subestimado.
+
+O método proposto por Abeywardena consiste em se obter uma matriz de correlações entre os genótipos em cada par de medições (ou período de avaliação). Determinam-se, nesta matriz, os autovalores e os autovetores normalizados. O autovetor cujos genótipos apresentam mesmo sinal e magnitudes próximas é aquele que expressa a tendência dos genótipos em manter suas posições relativas nos vários períodos de tempo. A proporção do autovalor associado a este autovetor é o estimador do coeficiente de repetibilidade, ou seja:
+
+$$
+r = \frac{\lambda_{K}}{\sum_{j} \lambda_{j}}, \  \ \ \ \ \ \ \ \ \ \ \ \ \ (j = 1, 2, ..., \eta)
+$$
+
+em que: 
+
+* $\eta$: número de períodos avaliados;
+
+* $\lambda_{k}$: autovalor associado ao autovetor cujos elementos tem mesmo sinal e magnitude semelhante.
+
+O estimador de Abeywardena é obtidos basenado-se na pressuposição de que o coeficiente de repetibilidade é dado pela correlação entre cada par de medições avaliadas nos diferentes genótipos. Assim, a partir de medições em p genótipos, obtêm-se a matriz de correlação:
+
+$$
+ R = 
+\begin{bmatrix}
+  1 & \rho & \cdots & \rho \\ \rho & 1 & \cdots & \rho \\ \cdots & \cdots & \ddots & \cdots \\ \rho & \rho & \cdots & 1
+\end{bmatrix}
+$$
+
+Morrison (1976) apresenta os autovalores e os autovetores de algumas matrizes-padrões, dentre elas, a matriz de estrutura equivalentes à de R. Para esta matriz, tem-se:
+
+a) O maior autovalor é dado por:
+
+$$
+\lambda_{1} = 1 + (\eta - 1) \rho
+$$
+
+e o autovetor normalizado é dado por:
+
+$$
+\alpha'_{1} = \left[ \frac{1}{\sqrt{\eta}}, \cdots, \frac{1}{\sqrt{\eta}} \right]
+$$
+
+b) Os $\eta - 1$ autovalores restantes são:
+
+$$
+\lambda_{j} = 1 - \rho, \  \  \  \  para \ \ j = 2, 3, ..., \eta
+$$
+
+e seus autovetores são quaisquer das $\eta - 1$ soluções independentes da equação:
+
+$$
+\rho (\alpha_{1j} + \alpha_{2j} + ... + \alpha_{\eta j}) = 0
+$$
+
+
+Como relatado anterioremente, em muitos casos o primeiro autovetor é aquele que apresenta elementos com o mesmo sinal e magnitude. Logo, seu autovalor é o coeficiente a ser utilizado na estimação do coeficiente de repetibilidade de Abeywardena. Entretanto, baseado no fato de que $\lambda_{1} = 1 + (\eta - 1) \rho$, Rutlege (1974) relata que $\lambda_{1}$ é influenciado pelo número de medições dos indivíduos, e assim, o estimador de $r$ apresentado a seguir torna-se mais adequado à estimação do coeficiente de repetibilidade do que $\lambda_{1}$.
+
+$$
+r = \frac{\hat{\lambda_{1}} - 1}{\eta - 1}
+$$
+
+Sendo $\hat{\lambda_{1}}$ o autovalor de $R$ associado ao autovetor cujos elementos tem mesmo sinal e magnitude semelhante.
+
+Com base em experimentos simulados, Abeywardena (1972) chama a atenção para o fato de que, nos casos em que os genótipos avaliados apresentam um padrão de comportamento periódico, o primeiro autovetor apresenta elementos com alternância de sinal, devendo a repetibilidade ser estimada por outro autovalor, cujo autovetor satisfaça a condição de igualdade de sinal e magnitude entre seus elementos.
+
+O coefiicente de repetibilidade pode ser estimado alternativamente pela técnica dos componentes principais aplicada na matriz de variâncias e covariâncias fenotípicas.
+
+Para o modelo:
+
+$$
+Y_{ij} = \mu + g_{i} + a_{j} + \epsilon_{ij}
+$$
+
+já definido anteriormente, tem-se que, para o caso de $\sum_{j} a_{j} = 0$ ($a_{j}$ é, portanto, o efeito fixo de ambiente temporário), a matriz de covariância:
+
+$$
+\Gamma = \sigma_{Y}^{2}
+\begin{bmatrix}
+ 1 & \rho & \cdots & \rho \\ \rho & 1 & \cdots & \rho \\ \cdots & \cdots & \ddots & \cdots \\ \rho & \rho & \cdots & 1
+\end{bmatrix}
+$$
+
+em que:
+
+$$
+V(Y_{ij}) = V(Y_{ij'}) = \sigma^2 + \sigma_{g}^{2} = \sigma_{Y}^{2} \\
+Cov(Y_{ij}, Y_{ij'}) = (\sigma_{g}^{2} + \sigma^{2}) \rho = \rho \sigma_{y}^{2}
+$$
+
+Para matriz com esta estrutura, Morrison (1976) relata que o primeiro autovalor é dado por:
+
+$$
+\lambda_{1} = \sigma_{Y}^{2} [1 + (\eta - 1) \rho]
+$$
+
+O autovetor correspondente é dado por:
+
+$$
+\alpha'_{1} = \left[ \frac{1}{\sqrt{\eta}} \  ... \ \frac{1}{\sqrt{\eta}} \right]
+$$
+
+Assim, neste caso, um estimador do coeficiente de repetibilidade é dado por:
+
+$$
+r = \hat{\rho} = \frac{\hat{\lambda_{1}} - \hat{\sigma_{Y}^{2}}}{\hat{\sigma_{Y}^{2}} (\eta - 1)}
+$$
+
+Sendo $\hat{\lambda_{1}}$ o autovalor de $\hat{\Gamma}$ associado ao autovetor cujos elementos tem mesmo sinal e magnitude semelhante.
+
+### Exemplo prático
+
+Para o exemplo, é utilizado o banco de dados `clones_cana`, com a avaliação de 10 genótipos em três épocas.
+
+Neste caso, o coeficiente de repetibilidade é estimado a partir da matriz de covariâcias $(\hat{\Gamma})$ ou de correçãoes $(\hat{R})$, obtida dos dados dos clones para cada par de época de avaliação.
+
+Para os dados em discussão, a matriz de correlação é dada por:
+
+$$
+\hat{R} = 
+\begin{bmatrix}
+  1 & 0,9596 & 0,9594 \\ 0,9596 & 1 &0,9421 \\ 0,9594 & 0,9421 & 1
+\end{bmatrix}
+$$
+
+
+Os autovalores e autovetores de $\hat{R}$ são apresentados a seguir.
+
+```{r autovalor-vetor-ex-rpt-pc-correl, echo=FALSE}
+data("clones_cana")
+eigen(cor(clones_cana))
+```
+
+Como pode ser visto, o primeiro autovetor é aquele cujos elementos apresentam mesmo sinal e magnitude próxima. Assim, por definição, a proporção, em relação ao total, do autovalor correspondente a este autovetor é a estimativa do coeficiente de repetibilidade de Abeywardena. Considerando, entretanto, o ajuste proposto por Rutledge (1974), tem-se:
+
+$$
+r = \frac{\hat{\lambda_{1}} - 1}{\eta - 1} = \frac{2,9074 - 1}{2} = 0,9537
+$$
+
+Utilizando a função `rpt_pca`, tem que:
+
+```{r funcao-vetor-ex-rpt-pc-correl-rpt_pca}
+rpt_pca(x = cor(clones_cana), correl = TRUE)
+```
+
+A função realiza a estimativa utilizando a matriz de correlação, se `correl = TRUE`.
+
+Utlizando a matriz de covariância, em vez da matriz de correlação, tem-se:
+
+$$
+\hat{\Gamma} =
+\begin{bmatrix}
+  1,7292 & 1,0144 & 1,7051 \\ 1,0144 & 06462 & 1,0236 \\ 1,7051 & 1,0236 & 1,8267
+\end{bmatrix}
+$$
+
+
+Os autovalores e os autovetores de $\hat{\Gamma}$ são apresentados a seguir:
+
+```{r autovalor-vetor-ex-rpt-pc-covariance, echo=FALSE}
+data("clones_cana")
+eigen(cov(clones_cana))
+```
+
+Uma outra estimativa do coeficiente de repetibilidade é então obtida considerando as estatísticas:
+
+$$
+\hat{\sigma_{Y}^{2}} = \frac{1}{\eta} \sum_{j} \hat{\sigma_{j}^{2}} = \frac{1}{3}(1,7292 + 0,6462 + 1,8266) = 1,4007 = \hat{\sigma^{2}} + \hat{\sigma_{g}^{2}}
+$$
+
+
+$\hat{\lambda_{1}} = 4,0872$: autovalor associado ao autovalor cujos elementos tem mesmo sinal e magnitudes semelhantes.
+
+Logo,
+
+$$
+r = \frac{4,0872 - 1,4007}{1,4007 (3 - 1)} = 0,9590
+$$
+ 
+Considerando a função `rpt_pca`, tem-se:
+
+```{r funcao-ex-rpt-pc-covariance-rpt_pca}
+rpt_pca(x = clones_cana, correl = FALSE)
+```
+
+
+## Método da Análise Estrutural
+
+O método da análise estrutural para a obtenção do coeficinete de repetibilidade foi proposto por Mansour, Nordhein e Rutledge (1981), apresentando apenas diferenças conceituais em relação ao método dos componentes principais.
+
+Neste método, considera-se $R$ a matriz paramétrica de correlações entre os genótipos em cada par de avaliação e $\hat{R}$ o seu estimador. Um estimador do coeficiente de repetibilidade baseado nos componentes principais é:
+
+$$
+r = \frac{\hat{\lambda_{1}} - 1}{\eta - 1} = \frac{\hat{\alpha}' \hat{R} \hat{\alpha} - 1}{\eta - 1}
+$$
+
+em que:
+
+* $\hat{\lambda_{1}} = \hat{\alpha}' \hat{R} \hat{\alpha}$: autovalor de $\hat{R}$ associado ao autovetor cujos elementos tem o mesmo sinal e magnitudes semelhantes.
+
+* $\hat{\alpha}' = [\hat{\alpha}'_{1} \hat{\alpha}'_{2} ... \hat{\alpha}'_{\eta}]$: autovetor associado a $\hat{\lambda_{1}}$, tal que $\hat{\alpha}' \hat{\alpha} = 1$
+
+Um estimador baseado na análise estrutural é dado por:
+
+$$
+r = \frac{\hat{\alpha}' \hat{R} \hat{\alpha} - 1}{\eta - 1}
+$$
+
+
+sendo $\alpha' = \left[\frac{1}{\sqrt{\eta}} \ .... \ \frac{1}{\sqrt{\eta}} \right]$ o autovetor com elementos paramétricos associados ao maior autovalor de $R$.
+
+Como neste caso verifica-se que:
+
+$$
+\hat{\alpha}' \hat{R} \hat{\alpha} = 1 + \frac{2}{\eta}\sum_{j} \sum_{<j'} r_{jj'}
+$$
+
+Consequentemente, tem-se:
+
+$$
+r = \frac{2}{\eta(\eta -1)} \sum_{j} \sum_{<j'}r_{jj'}
+$$
+
+Assim, este estimador do coeficiente de repetibilidade é a média aritmética das correlações fenotícas entre genótipos, considerando cada par de medições.
+
+De modo análogo, pode-se obter o coeficiente de repetibilidade utilizando-se o autovetor paramétrico ($\alpha$) e a matriz de covariância $\hat{\Gamma}$. Assim, tem-se:
+
+$$
+r = \frac{\alpha' \Gamma \alpha - \hat{\sigma_{Y}^{2}}}{\hat{\alpha}_{Y}^{2} (\eta - 1)}
+$$
+
+Sendo
+
+$$
+\alpha' \Gamma \alpha = \frac{1}{\eta} \sum_j \sum_{j'} \hat{\sigma_{jj'}} = \frac{1}{\eta}\sum_j \sum_{\neq j'} \hat{\sigma_{jj'}} + \frac{1}{\eta} \sum_{j} \hat{\sigma_{j}^{2}}
+$$
+
+e
+
+$$
+\hat{\sigma_{Y}^{2}} = \frac{1}{\eta} \sum_{j}{\hat{\sigma_{j}^{2}}} = \hat{\sigma_{g}^{2}} + \hat{\sigma^{2}}
+$$
+
+em que: $\hat{\sigma_{j}^{2}}$: variância entre genótipos no j-ésimo ambiente, tem-se:
+
+$$
+r = \frac{1}{\eta (\eta - 1) \hat{\sigma_{Y}^{2}}} \left[ \sum_{j} \sum_{\neq j'}  \hat{\sigma_{jj'}}\right]
+$$
+
+Demonstra-se que este etimador é equivalente ao obtido pela análise de variância, ou seja:
+
+$$
+r = \frac{\hat{\sigma_{g}^{2}}}{\hat{\sigma^{2}} + \hat{\sigma_{g}^{2}}}
+$$
+
+### Exemplo prático
+
+Para o exemplo, é utilizado o banco de dados `clones_cana`, com a avaliação de 10 genótipos em três épocas.
+
+Para o exemplo, é considerado novamente a matriz de correlação $(\hat{R})$, estima-se alternativamente o coeficiente de repetibilidade por meio de:
+
+$$
+r = \frac{\alpha' \hat{R} \alpha - 1}{\eta - 1}
+$$
+
+em que:
+
+$$
+\alpha' = \left[\frac{1}{\sqrt{\eta}} \ .... \ \frac{1}{\sqrt{\eta}} \right]
+$$
+
+De modo equivalente, esta estimativa do coeficiente de repetibilidade pode ser obtida por meio de:
+
+$$
+r = \frac{1}{k} \sum_{j} \sum_{<j'} {r_{jj'}}, \ sendo \ k = \frac{\eta (\eta - 1)}{2}
+$$
+
+Logo,
+
+$$
+r = \frac{1}{3}(0,9596 + 0,9594 + 0,9421) = 0,9537
+$$
+
+Considerando a função `rpt_sctructural`, tem-se:
+
+```{r funcao-vetor-ex-rpt-pc-correl-rpt_sctructural}
+rpt_sctructural(x = clones_cana, correl = TRUE)
+```
+
+Considerando a matriz de covariância, obtêm-se outra estimativa de $r$ por meio de:
+
+$$
+r = \frac{\alpha' \hat{R} \alpha - \hat{\sigma_{Y}^{2}}}{\hat{\sigma_{Y}^{2}}(\eta -1)}
+$$
+
+Por esta expressão, obtêm-se a estimativa idêntica à obtida pelo método de análise de avriância com os fatores de variação correspondentes a clones, ambientes e resíduo, ou seja:
+
+$$
+r = 0,8908
+$$
+
+Considerando a função `rpt_sctructural`, tem-se:
+
+```{r funcao-vetor-ex-rpt-pc-covariance-rpt_sctructural}
+rpt_sctructural(x = clones_cana, correl = FALSE)
+```
